@@ -7,6 +7,19 @@
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<style>
+		th {
+			text-align: left;
+			font-weight: bold;
+			font-size: 20px;
+			background-color: #E4C5DC;
+		}
+		table {
+			height: 800px;
+			width: 800px;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 20px;
+		}
 		table, th, td {
 			border: 1px solid grey;
 			padding: 5px;
@@ -19,6 +32,12 @@
 		table tr:nth-child(even) {
 			background-color: #80527C;
 			color: #fff;
+		}
+		.tableData {
+			text-align: center;
+		}
+		.emp_num {
+			text-align: center;
 		}
 	</style>
 </head>
@@ -99,16 +118,18 @@ secApp.controller('mySecCtrl', function($scope){
 
 <table>
 	<tr>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Age</th>
-		<th>Job Title</th>
+		<th class="tableData">Emp #</th>
+		<th class="tableData">First Name</th>
+		<th class="tableData">Last Name</th>
+		<th class="tableData">Age</th>
+		<th class="tableData">Job Title</th>
 	</tr>
 	<tr ng-repeat="x in workingPeople">
-		<td>{{ x.fname }}</td>
-		<td>{{ x.lname }}</td>
-		<td>{{ x.age }}</td>
-		<td>{{ x.title }}</td>
+		<td class="emp_num">{{ $index + 1 }}</td>
+		<td class="tableData">{{ x.fname }}</td>
+		<td class="tableData">{{ x.lname }}</td>
+		<td class="tableData">{{ x.age }}</td>
+		<td class="tableData">{{ x.title }}</td>
 	</tr>
 </table>
 </div>
