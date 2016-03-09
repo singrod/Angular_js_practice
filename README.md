@@ -1,2 +1,2 @@
 # Angular_js_practice
-Practice code in Angular.js
+My first practice code in Angular.js

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+	Author Mark Singleton 3/9/2016
+	Exploring several ways where Angular.js works really well.
+-->
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<style>
+		table, th, td {
+			border: 1px solid grey;
+			padding: 5px;
+			border-collapse: collapse;
+		}
+		table tr:nth-child(odd) {
+			background-color: #fff;
+			color: #80527C;
+		}
+		table tr:nth-child(even) {
+			background-color: #80527C;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+
+<!--  
+******This part of the code is a simple example 
+******of creating a module and controller. 
+******Be sure to uncomment one set of code at 
+******a time. 
+-->
+
+<!--***Remove Me When Ready*****
+<div ng-app="myApp" ng-controller="myCtrl">
+<p >{{ company }}</p>
+<p>{{ worker.firstName }}</p>
+<p>{{ worker.lastName }}</p>
+<p>{{ worker.phone }}</p>
+<p>{{ jobTitle }}</p>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope){
+	$scope.company = "Sysco";
+	$scope.worker = {	
+	firstName : "Bob",
+	lastName : "Smith",
+	phone : "407-721-4007",
+	jobTitle : "Driver"	
+	};
+});
+</script>
+***Remove Me When Ready*****-->
+
+<!--  
+******This part of the code shows the
+******power of using an array with the 'ng-repeat' directive. 
+******Be sure to uncomment one set of code at 
+******a time. 
+-->
+
+<!--***Remove Me When Ready*****
+<div ng-app="mySecApp" ng-controller="mySecCtrl">
+<p ng-repeat="x in people">
+	{{ x.fname + ' ' + x.lname + ', ' + x.age + ', ' + x.title}}
+</p>
+</div>
+<script>
+var secApp = angular.module('mySecApp', []);
+secApp.controller('mySecCtrl', function($scope){
+	$scope.people = [
+		{fname: "Bob", lname: "Smith", age: 45, title: "Driver"},
+		{fname: "Alice", lname: "Parker", age: 37, title: "Nurse"},
+		{fname: "Chuck", lname: "Hoody", age: 22, title: "Cashier"},
+		{fname: "Megan", lname: "Sweet", age: 28, title: "Baker"},
+		{fname: "Christy", lname: "Williams", age: 31, title: "Developer"},
+		{fname: "Pat", lname: "Knight", age: 40, title: "Manager"},
+		{fname: "Will", lname: "Floyd", age: 29, title: "Cashier"},
+		{fname: "Nancy", lname: "Heart", age: 38, title: "Pastor"},
+		{fname: "Mike", lname: "Wallace", age: 67, title: "Anchor"},
+		{fname: "Howard", lname: "Steele", age: 55, title: "Musician"},
+		{fname: "Steve", lname: "Auston", age:5, title: "Hero"}	
+	];
+});
+</script>
+
+***Remove Me When Ready*****-->
+
+<!--  
+******This part of the code use an array with
+******'ng-repeat' and formats the output. 
+******Be sure to uncomment one set of code at 
+******a time. 
+-->
+
+<!--****Be sure to comment me when viewing the rest of the code****-->
+<div ng-app="myThirdApp" ng-controller="myThirdCtrl">
+
+<table>
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Age</th>
+		<th>Job Title</th>
+	</tr>
+	<tr ng-repeat="x in workingPeople">
+		<td>{{ x.fname }}</td>
+		<td>{{ x.lname }}</td>
+		<td>{{ x.age }}</td>
+		<td>{{ x.title }}</td>
+	</tr>
+</table>
+</div>
+<script>
+var thirdApp = angular.module('myThirdApp', []);
+thirdApp.controller('myThirdCtrl', function($scope){
+	$scope.workingPeople = [	
+		{fname: "Bob", lname: "Smith", age: 45, title: "Driver"},
+		{fname: "Alice", lname: "Parker", age: 37, title: "Nurse"},
+		{fname: "Chuck", lname: "Hoody", age: 22, title: "Cashier"},
+		{fname: "Megan", lname: "Sweet", age: 28, title: "Baker"},
+		{fname: "Christy", lname: "Williams", age: 31, title: "Developer"},
+		{fname: "Pat", lname: "Knight", age: 40, title: "Manager"},
+		{fname: "Will", lname: "Floyd", age: 29, title: "Cashier"},
+		{fname: "Nancy", lname: "Heart", age: 38, title: "Pastor"},
+		{fname: "Mike", lname: "Wallace", age: 67, title: "Anchor"},
+		{fname: "Howard", lname: "Steele", age: 55, title: "Musician"},
+		{fname: "Steve", lname: "Auston", age:5, title: "Hero"}	
+	];
+});
+</script>
+</body>
+</html>
