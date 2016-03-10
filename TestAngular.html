@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<title>Test Angular Page</title>
+<meta name="description" content="How to use Angular.js directives"/>
+<meta charset="UTF-8"/>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		table {
+			width: 500px;
+			margin-top: 20px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		th {
+			text-align: left;
+			padding: 8px;
+		}
+		td {
+			padding: 8px;
+		}
+		tr:nth-child(odd) {
+			background-color: #fff;
+			font-family: Georgia, Serif;
+			color: black;
+		}
+		tr:nth-child(even) {
+			background-color: grey;
+			font-family: Georgia, Serif;
+			color: white;
+		}		
+	</style>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<table>
+			<tr>
+				<th>Year</th>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Color</th>				
+			</tr>
+			<tr ng-repeat="x in autos">
+				<td>{{ x.year }}</td>
+				<td>{{ x.make }}</td>
+				<td>{{ x.model }}</td>
+				<td>{{ x.color }}</td>			
+			</tr>
+		</table>
+	</div>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope){
+		
+		$scope.autos = [
+			{year: "1964", make: "Chevy", model: "Monte Carlo", color: "Maroon" },
+			{year: "1985", make: "Chevy", model: "Camero", color: "Blue" },
+			{year: "2013", make: "Mercedes Benz", model: "ES600", color: "White" },
+			{year: "1999", make: "Ford", model: "Explorer", color: "Green" },
+			{year: "1978", make: "Honda", model: "Accord", color: "Red" },
+			{year: "2000", make: "Ford", model: "F150", color: "Black" },
+			{year: "2005", make: "Lincoln", model: "Towncar", color: "Biege" },
+			{year: "2006", make: "GMC", model: "Sierra", color: "Black" },
+			{year: "1992", make: "BMW", model: "S7000 ", color: "Navy Blue" },
+			{year: "2006", make: "Pontiac", model: "FireBird", color: "Red" },
+			{year: "2012", make: "Chevy", model: "Malibu", color: "White" },
+			{year: "2016", make: "GMC", model: "Envoy Denali", color: "Black" },
+			{year: "2011", make: "BMW", model: "E500", color: "Silver" }
+		];
+		});		
+	</script>
+</body>
+</html>
